@@ -52,7 +52,7 @@ export default function Navbar() {
               <a href="/about" className="block text-gray-300 hover:text-white px-2 py-1 text-lg flex items-center">
                 <InboxIcon className="w-5 h-5 mr-2" /> About
               </a>
-              <a href="/Contact" className="block text-gray-300 hover:text-white px-2 py-1 text-lg flex items-center">
+              <a href="/contact" className="block text-gray-300 hover:text-white px-2 py-1 text-lg flex items-center">
                 <PhoneIcon className="w-5 h-5 mr-2" /> Contact
               </a>
               <a href="/explore" className="block text-gray-300 hover:text-white px-2 py-1 text-lg flex items-center">

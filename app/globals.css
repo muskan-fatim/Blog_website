@@ -2,20 +2,194 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Space between dots */
+  margin-top: 16px; /* Adjust as needed */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.custom-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ccc; /* Default color */
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background: black; /* Active dot color */
+  transform: scale(1.2); /* Slightly enlarge the active dot */
+}
+
+.amazing-paragraph {
+  font-size: 1.25rem; /* Increase font size */
+  line-height: 1.75rem; /* Adjust line height */
+  text-align: center; /* Center align text */
+  color: #4a5568; /* Custom text color */
+  margin-bottom: 2rem; /* Add bottom margin */
+  padding: 1rem; /* Add padding */
+  background: #f7fafc; /* Light background color */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+
+/* Blog Container Specific Styling */
+.blog-container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog Container - Headings */
+.blog-container h1 {
+  color: #444;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007BFF;
+  padding-bottom: 10px;
+}
+
+/* Blog Container - Paragraphs */
+.blog-container p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Blog Container - Images */
+.blog-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blog-container a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .blog-container {
+    width: 95%;
+  }
+  .blog-container h1 {
+    font-size: 2em;
+  }
+  .blog-container p {
+    font-size: 0.9em;
+  }
+}
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coffee-mug {
+  position: relative;
+  width: 100px;
+  height: 120px;
+}
+
+.mug {
+  width: 100px;
+  height: 60px;
+  background-color: #6b4e3d;
+  border-radius: 0 0 50px 50px;
+  position: absolute;
+  bottom: 0;
+}
+
+.handle {
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  border: 10px solid #6b4e3d;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.steam {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+  animation: rise 2s infinite ease-in-out;
+}
+
+.steam-one {
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.steam-two {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.steam-three {
+  left: 65%;
+  animation-delay: 0.4s;
+}
+
+.steam-four {
+  left: 85%;
+  animation-delay: 0.6s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
 }
